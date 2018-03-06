@@ -1,4 +1,2 @@
-module CounterCacheUpdate
-  module ApplicationHelper
-  end
+module CounterCacheUpdate::ApplicationHelper
 end

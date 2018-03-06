@@ -14,7 +14,7 @@ class CounterCacheUpdate::TableUpdatorService < ServicePattern::Service
 private
 
   def column_name
-    @_column_name ||= proc do
+    @column_name ||= proc do
       if reflection.options[:counter_cache] == true
         "#{reflection.active_record.name.pluralize.underscore}_count"
       else

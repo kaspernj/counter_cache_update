@@ -23,7 +23,7 @@ private
     model_classes.each do |model_class|
       @progress_bar&.increment!
 
-      model_class.reflections.each do |name, reflection|
+      model_class.reflections.each do |_name, reflection|
         next unless reflection.macro.to_sym == :belongs_to
         next unless reflection.options[:counter_cache]
         CounterCacheUpdate::TableUpdatorService.execute!(reflection: reflection)
@@ -32,6 +32,6 @@ private
   end
 
   def model_classes
-    @_model_classes ||= ActiveRecord::Base.descendants
+    @model_classes ||= ActiveRecord::Base.descendants
   end
 end
