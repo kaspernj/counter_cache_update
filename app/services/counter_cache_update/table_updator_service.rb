@@ -1,4 +1,4 @@
-class CounterCache::TableUpdatorService < ServicePattern::Service
+class CounterCacheUpdate::TableUpdatorService < ServicePattern::Service
   attr_reader :model_class, :reflection
 
   def initialize(reflection:)
