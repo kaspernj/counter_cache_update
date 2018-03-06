@@ -1,14 +1,11 @@
 # CounterCacheUpdate
 Short description and motivation.
 
-## Usage
-How to use my plugin.
-
 ## Installation
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'counter_cache_update'
+gem "counter_cache_update"
 ```
 
 And then execute:
@@ -16,9 +13,11 @@ And then execute:
 $ bundle
 ```
 
-Or install it yourself as:
-```bash
-$ gem install counter_cache_update
+## Usage
+
+Call the main service like this:
+```ruby
+CounterCacheUpdate::UpdateService.execute!
 ```
 
 ## Contributing
