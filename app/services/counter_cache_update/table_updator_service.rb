@@ -1,4 +1,4 @@
-class CounterCache::TableUpdatorService < ServicePattern::Service
+class CounterCacheUpdate::TableUpdatorService < ServicePattern::Service
   attr_reader :model_class, :reflection
 
   def initialize(reflection:)
@@ -14,7 +14,7 @@ class CounterCache::TableUpdatorService < ServicePattern::Service
 private
 
   def column_name
-    @_column_name ||= proc do
+    @column_name ||= proc do
       if reflection.options[:counter_cache] == true
         "#{reflection.active_record.name.pluralize.underscore}_count"
       else

@@ -1,5 +1,3 @@
-module CounterCacheUpdate
-  class ApplicationController < ActionController::Base
-    protect_from_forgery with: :exception
-  end
+class CounterCacheUpdate::ApplicationController < ActionController::Base
+  protect_from_forgery with: :exception
 end

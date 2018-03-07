@@ -1,5 +1,3 @@
-module CounterCacheUpdate
-  class ApplicationRecord < ActiveRecord::Base
-    self.abstract_class = true
-  end
+class CounterCacheUpdate::ApplicationRecord < ActiveRecord::Base
+  self.abstract_class = true
 end

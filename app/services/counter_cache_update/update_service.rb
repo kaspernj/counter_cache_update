@@ -1,4 +1,4 @@
-class CounterCache::UpdateService < ServicePattern::Service
+class CounterCacheUpdate::UpdateService < ServicePattern::Service
   attr_reader :use_progress_bar
 
   def initialize(use_progress_bar: false)
@@ -23,15 +23,15 @@ private
     model_classes.each do |model_class|
       @progress_bar&.increment!
 
-      model_class.reflections.each do |name, reflection|
+      model_class.reflections.each do |_name, reflection|
         next unless reflection.macro.to_sym == :belongs_to
         next unless reflection.options[:counter_cache]
-        CounterCache::TableUpdatorService.execute!(reflection: reflection)
+        CounterCacheUpdate::TableUpdatorService.execute!(reflection: reflection)
       end
     end
   end
 
   def model_classes
-    @_model_classes ||= ActiveRecord::Base.descendants
+    @model_classes ||= ActiveRecord::Base.descendants
   end
 end

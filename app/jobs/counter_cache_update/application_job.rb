@@ -1,4 +1,2 @@
-module CounterCacheUpdate
-  class ApplicationJob < ActiveJob::Base
-  end
+class CounterCacheUpdate::ApplicationJob < ActiveJob::Base
 end
