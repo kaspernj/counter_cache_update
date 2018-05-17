@@ -9,8 +9,6 @@ class CounterCacheUpdate::TableUpdatorService < ServicePattern::Service
   end
 
   def execute!
-    puts "SQL: #{sql}"
-
     model_class.connection.execute(sql)
     ServicePattern::Response.new(success: true)
   end
