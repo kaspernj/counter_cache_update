@@ -2,7 +2,7 @@ PATH
   remote: .
   specs:
     counter_cache_update (0.0.0)
-      rails (~> 5.1.5)
+      rails (>= 5.1.0)
       service_pattern (>= 0.0.3)
 
 GEM
@@ -74,7 +74,7 @@ GEM
     mini_mime (1.0.0)
     mini_portile2 (2.3.0)
     minitest (5.11.3)
-    nio4r (2.2.0)
+    nio4r (2.3.1)
     nokogiri (1.8.2)
       mini_portile2 (~> 2.3.0)
     parallel (1.12.1)
