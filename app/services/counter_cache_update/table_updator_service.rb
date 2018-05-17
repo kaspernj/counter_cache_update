@@ -24,15 +24,15 @@ private
   end
 
   def count_sql
-    "SELECT COUNT(*) FROM #{reflection_table_name} WHERE #{reflection_table_name}.#{reflection_primary_key} = #{table_name}.#{primary_key}"
+    "SELECT COUNT(*) FROM #{reflection_table_name} WHERE #{reflection_table_name}.#{relation_foreign_key} = #{table_name}.#{primary_key}"
   end
 
   def primary_key
     model_class.primary_key
   end
 
-  def reflection_primary_key
-    reflection.active_record.primary_key
+  def relation_foreign_key
+    reflection.foreign_key
   end
 
   def reflection_table_name

@@ -2,11 +2,12 @@ require "rails_helper"
 
 describe CounterCacheUpdate::UpdateService do
   let!(:project) { create :project }
-  let!(:task) { create :task, project: project }
+  let!(:task1) { create :task, project: project }
+  let!(:task2) { create :task, project: project }
 
   describe "#execute!" do
     it "updates the cache" do
-      expect(project.tasks_count).to eq 1
+      expect(project.tasks_count).to eq 2
 
       Project.connection.execute("UPDATE projects SET tasks_count = 0 WHERE id = '#{project.id}'")
 
@@ -14,7 +15,7 @@ describe CounterCacheUpdate::UpdateService do
 
       CounterCacheUpdate::UpdateService.execute!
 
-      expect(project.reload.tasks_count).to eq 1
+      expect(project.reload.tasks_count).to eq 2
     end
   end
 end
