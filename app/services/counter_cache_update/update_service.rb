@@ -26,6 +26,7 @@ private
       model_class.reflections.each do |_name, reflection|
         next unless reflection.macro.to_sym == :belongs_to
         next unless reflection.options[:counter_cache]
+        next if reflection.options[:polymorphic]
         CounterCacheUpdate::TableUpdatorService.execute!(reflection: reflection)
       end
     end
