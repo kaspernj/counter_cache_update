@@ -1,12 +1,16 @@
 class CounterCacheUpdate::TableUpdatorService < ServicePattern::Service
   attr_reader :model_class, :reflection
 
-  def initialize(reflection:)
+  def initialize(reflection:, model_class: nil)
     @reflection = reflection
-    @model_class = @reflection.class_name.constantize
+
+    @model_class = model_class
+    @model_class ||= @reflection.class_name.constantize
   end
 
   def execute!
+    puts "SQL: #{sql}"
+
     model_class.connection.execute(sql)
     ServicePattern::Response.new(success: true)
   end
@@ -24,7 +28,9 @@ private
   end
 
   def count_sql
-    "SELECT COUNT(*) FROM #{reflection_table_name} WHERE #{reflection_table_name}.#{relation_foreign_key} = #{table_name}.#{primary_key}"
+    sql = "SELECT COUNT(*) FROM #{reflection_table_name} WHERE #{reflection_table_name}.#{relation_foreign_key} = #{table_name}.#{primary_key}"
+    sql << " AND #{reflection.foreign_type} = #{ActiveRecord::Base.connection.quote(model_class.name)}" if reflection.options[:polymorphic]
+    sql
   end
 
   def primary_key

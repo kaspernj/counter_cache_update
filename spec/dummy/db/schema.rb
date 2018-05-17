@@ -10,13 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180306135834) do
+ActiveRecord::Schema.define(version: 20180517062438) do
+
+  create_table "comments", force: :cascade do |t|
+    t.string "resource_type", null: false
+    t.integer "resource_id", null: false
+    t.text "content", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["resource_type", "resource_id"], name: "index_comments_on_resource_type_and_resource_id"
+  end
 
   create_table "projects", force: :cascade do |t|
     t.string "name"
     t.integer "tasks_count", default: 0, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "comments_count", default: 0, null: false
   end
 
   create_table "tasks", force: :cascade do |t|
@@ -24,6 +34,7 @@ ActiveRecord::Schema.define(version: 20180306135834) do
     t.integer "project_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "comments_count", default: 0, null: false
     t.index ["project_id"], name: "index_tasks_on_project_id"
   end
 
