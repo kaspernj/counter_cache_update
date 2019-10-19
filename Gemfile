@@ -9,7 +9,7 @@ group :development, :test do
   gem "best_practice_project", "0.0.10", require: false
   gem "factory_bot_rails", "4.8.2", require: false
   gem "rspec-rails", "3.9.0"
-  gem "rubocop", "0.53.0", require: false
+  gem "rubocop", "0.75.1", require: false
   gem "sqlite3", "1.3.13"
 end
 
