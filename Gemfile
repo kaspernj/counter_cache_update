@@ -7,7 +7,7 @@ gemspec
 
 group :development, :test do
   gem "best_practice_project", require: false, git: "https://github.com/kaspernj/best_practice_project.git"
-  gem "factory_bot_rails", "4.8.2", require: false
+  gem "factory_bot_rails", "5.1.1", require: false
   gem "rspec-rails", "3.9.0"
   gem "rubocop", require: false
   gem "rubocop-performance", require: false
