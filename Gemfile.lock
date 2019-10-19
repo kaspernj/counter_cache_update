@@ -1,3 +1,10 @@
+GIT
+  remote: https://github.com/kaspernj/best_practice_project.git
+  revision: cf3a8e27b173540118278331a58177c5a8d857cc
+  specs:
+    best_practice_project (0.0.9)
+      auto_autoloader
+
 PATH
   remote: .
   specs:
@@ -49,8 +56,6 @@ GEM
     ast (2.4.0)
     auto_autoloader (0.0.5)
       string-cases
-    best_practice_project (0.0.10)
-      auto_autoloader (>= 0.0.5)
     builder (3.2.3)
     coderay (1.1.2)
     concurrent-ruby (1.1.5)
@@ -172,7 +177,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  best_practice_project (= 0.0.10)
+  best_practice_project!
   counter_cache_update!
   factory_bot_rails (= 4.8.2)
   pry-rails (= 0.3.9)
