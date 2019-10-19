@@ -8,7 +8,7 @@ class CounterCacheUpdate::TableUpdatorService < ServicePattern::Service
     @model_class ||= @reflection.class_name.constantize
   end
 
-  def execute!
+  def execute
     model_class.connection.execute(sql)
     ServicePattern::Response.new(success: true)
   end
