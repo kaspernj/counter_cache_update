@@ -4,10 +4,12 @@ class CounterCacheUpdate::PolymorphicUpdatorService < ServicePattern::Service
     @reflection = reflection
   end
 
-  def execute!
+  def execute
     foreign_types.each do |foreign_type|
       CounterCacheUpdate::TableUpdatorService.execute!(reflection: @reflection, model_class: foreign_type.constantize)
     end
+
+    ServicePattern::Response.new(success: true)
   end
 
 private
