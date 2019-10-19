@@ -6,10 +6,13 @@ source "https://rubygems.org"
 gemspec
 
 group :development, :test do
-  gem "best_practice_project", "0.0.10", require: false
+  gem "best_practice_project", require: false, git: "https://github.com/kaspernj/best_practice_project.git"
   gem "factory_bot_rails", "5.1.1", require: false
   gem "rspec-rails", "3.9.0"
-  gem "rubocop", "0.53.0", require: false
+  gem "rubocop", require: false
+  gem "rubocop-performance", require: false
+  gem "rubocop-rails", require: false
+  gem "rubocop-rspec", require: false
   gem "sqlite3", "1.3.13"
 end
 
