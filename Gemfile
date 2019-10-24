@@ -6,9 +6,9 @@ source "https://rubygems.org"
 gemspec
 
 group :development, :test do
-  gem "best_practice_project", require: false, git: "https://github.com/kaspernj/best_practice_project.git"
-  gem "factory_bot_rails", "5.1.1", require: false
-  gem "rspec-rails", "3.9.0"
+  gem "best_practice_project", require: false
+  gem "factory_bot_rails", require: false
+  gem "rspec-rails"
   gem "rubocop", require: false
   gem "rubocop-performance", require: false
   gem "rubocop-rails", require: false
