@@ -9,7 +9,7 @@ class CounterCacheUpdate::PolymorphicUpdatorService < ServicePattern::Service
       CounterCacheUpdate::TableUpdatorService.execute!(reflection: @reflection, model_class: foreign_type.constantize)
     end
 
-    ServicePattern::Response.new(success: true)
+    succeed!
   end
 
 private
