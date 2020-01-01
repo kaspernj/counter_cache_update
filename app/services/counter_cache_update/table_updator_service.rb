@@ -10,7 +10,7 @@ class CounterCacheUpdate::TableUpdatorService < ServicePattern::Service
 
   def execute
     model_class.connection.execute(sql)
-    ServicePattern::Response.new(success: true)
+    succeed!
   end
 
 private

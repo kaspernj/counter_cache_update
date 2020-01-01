@@ -14,7 +14,7 @@ class CounterCacheUpdate::UpdateService < ServicePattern::Service
     end
 
     update_relationships!
-    ServicePattern::Response.new(success: true)
+    succeed!
   end
 
 private
