@@ -18,6 +18,6 @@ Gem::Specification.new do |s|
 
   s.add_dependency "rails", ">= 5.1.0"
   s.add_runtime_dependency "service_pattern", ">= 0.0.4"
-  s.add_development_dependency "pry-rails", "0.3.9"
+  s.add_development_dependency "pry-rails"
   s.add_development_dependency "tzinfo-data"
 end
