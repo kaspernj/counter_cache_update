@@ -167,10 +167,10 @@ GEM
       parser (>= 2.7.0.1)
     rubocop-performance (1.6.0)
       rubocop (>= 0.71.0)
-    rubocop-rails (2.5.2)
-      activesupport
+    rubocop-rails (2.6.0)
+      activesupport (>= 4.2.0)
       rack (>= 1.1)
-      rubocop (>= 0.72.0)
+      rubocop (>= 0.82.0)
     rubocop-rspec (1.40.0)
       rubocop (>= 0.68.1)
     ruby-progressbar (1.10.1)
@@ -194,7 +194,7 @@ GEM
     websocket-driver (0.7.2)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.5)
-    zeitwerk (2.3.0)
+    zeitwerk (2.3.1)
 
 PLATFORMS
   ruby
