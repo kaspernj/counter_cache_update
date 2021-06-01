@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    counter_cache_update (0.0.5)
+    counter_cache_update (0.0.6)
       rails (>= 5.1.0)
       service_pattern (>= 1.0.0)
 
@@ -198,7 +198,7 @@ GEM
     tzinfo-data (1.2021.1)
       tzinfo (>= 1.0.0)
     unicode-display_width (1.7.0)
-    websocket-driver (0.7.3)
+    websocket-driver (0.7.4)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.5)
     zeitwerk (2.4.2)
