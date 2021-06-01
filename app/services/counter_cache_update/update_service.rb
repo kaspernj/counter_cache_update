@@ -5,7 +5,7 @@ class CounterCacheUpdate::UpdateService < ServicePattern::Service
     @use_progress_bar = use_progress_bar
   end
 
-  def execute
+  def perform
     Rails.application.eager_load!
 
     if use_progress_bar

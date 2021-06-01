@@ -3,7 +3,7 @@ PATH
   specs:
     counter_cache_update (0.0.5)
       rails (>= 5.1.0)
-      service_pattern (>= 0.0.4)
+      service_pattern (>= 1.0.0)
 
 GEM
   remote: https://rubygems.org/
@@ -182,7 +182,7 @@ GEM
       rubocop (~> 0.87)
       rubocop-ast (>= 0.7.1)
     ruby-progressbar (1.11.0)
-    service_pattern (0.0.8)
+    service_pattern (1.0.0)
     sprockets (4.0.2)
       concurrent-ruby (~> 1.0)
       rack (> 1, < 3)
