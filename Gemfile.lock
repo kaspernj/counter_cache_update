@@ -3,7 +3,7 @@ PATH
   specs:
     counter_cache_update (0.0.5)
       rails (>= 5.1.0)
-      service_pattern (>= 0.0.4)
+      service_pattern (>= 1.0.0)
 
 GEM
   remote: https://rubygems.org/
