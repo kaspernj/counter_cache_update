@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    counter_cache_update (0.0.6)
+    counter_cache_update (0.0.7)
       rails (>= 5.1.0)
       service_pattern (>= 1.0.0)
 
@@ -182,7 +182,7 @@ GEM
       rubocop (~> 0.87)
       rubocop-ast (>= 0.7.1)
     ruby-progressbar (1.11.0)
-    service_pattern (1.0.2)
+    service_pattern (1.0.10)
     sprockets (4.1.1)
       concurrent-ruby (~> 1.0)
       rack (> 1, < 3)
@@ -220,4 +220,4 @@ DEPENDENCIES
   tzinfo-data
 
 BUNDLED WITH
-   2.2.17
+   2.2.28
