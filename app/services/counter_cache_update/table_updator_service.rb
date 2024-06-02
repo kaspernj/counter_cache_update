@@ -6,6 +6,8 @@ class CounterCacheUpdate::TableUpdatorService < ServicePattern::Service
 
     @model_class = model_class
     @model_class ||= @reflection.class_name.constantize
+
+    raise "Column not found: #{table_name}.#{column_name}" if model_class.column_names.exclude?(column_name)
   end
 
   def perform
