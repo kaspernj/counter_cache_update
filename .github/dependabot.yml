@@ -3,11 +3,7 @@ updates:
 - package-ecosystem: bundler
   directory: "/"
   schedule:
-    interval: monthly
-    time: "11:00"
-    timezone: Europe/Copenhagen
+    interval: weekly
+    time: "04:00"
+    timezone: Europe/Berlin
   open-pull-requests-limit: 99
-  ignore:
-  - dependency-name: rails
-    versions:
-    - 6.1.0
