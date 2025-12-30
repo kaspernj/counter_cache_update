@@ -23,7 +23,7 @@ private
     model_classes.each do |model_class|
       @progress_bar&.increment!
 
-      model_class.reflections.each do |_name, reflection|
+      model_class.reflections.each_value do |reflection|
         next unless reflection.macro.to_sym == :belongs_to
         next unless reflection.options[:counter_cache]
 

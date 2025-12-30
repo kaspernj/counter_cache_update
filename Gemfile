@@ -7,13 +7,16 @@ gemspec
 
 group :development, :test do
   gem "best_practice_project", require: false
-  gem "factory_bot_rails", require: false
-  gem "rspec-rails"
-  gem "rubocop", require: false
-  gem "rubocop-performance", require: false
-  gem "rubocop-rails", require: false
-  gem "rubocop-rspec", require: false
+  gem "factory_bot_rails", "~> 6.4", require: false
+  gem "pry-rails"
+  gem "rspec-rails", "~> 6.1"
+  gem "rubocop", "~> 1.60", require: false
+  gem "rubocop-performance", "~> 1.21", require: false
+  gem "rubocop-rails", "~> 2.25", require: false
+  gem "rubocop-rspec", "~> 2.28", require: false
+  gem "sprockets-rails", "~> 3.5"
   gem "sqlite3"
+  gem "tzinfo-data"
 end
 
 # Declare any dependencies that are still in development here instead of in

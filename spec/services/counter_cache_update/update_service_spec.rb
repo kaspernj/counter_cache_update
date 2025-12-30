@@ -1,12 +1,12 @@
 require "rails_helper"
 
 describe CounterCacheUpdate::UpdateService do
-  let!(:comment1) { create :comment, resource: task1 }
-  let!(:comment2) { create :comment, resource: task1 }
-  let!(:comment3) { create :comment, resource: project }
-  let!(:project) { create :project }
-  let!(:task1) { create :task, project: project }
-  let!(:task2) { create :task, project: project }
+  let!(:project) { create(:project) }
+  let!(:task_primary) { create(:task, project: project) }
+  let!(:task_secondary) { create(:task, project: project) }
+  let!(:task_primary_comment_one) { create(:comment, resource: task_primary) }
+  let!(:task_primary_comment_two) { create(:comment, resource: task_primary) }
+  let!(:project_comment) { create(:comment, resource: project) }
 
   describe "#execute!" do
     it "updates the cache" do
@@ -22,8 +22,8 @@ describe CounterCacheUpdate::UpdateService do
 
       expect(project.comments_count).to eq 1
       expect(project.tasks_count).to eq 2
-      expect(task1.reload.comments_count).to eq 2
-      expect(task2.reload.comments_count).to eq 0
+      expect(task_primary.reload.comments_count).to eq 2
+      expect(task_secondary.reload.comments_count).to eq 0
     end
   end
 end
