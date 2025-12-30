@@ -18,12 +18,19 @@ class CounterCacheUpdate::TableUpdatorService < ServicePattern::Service
 private
 
   def column_name
-    @column_name ||= if reflection.options[:counter_cache] == true
-      "#{reflection.active_record.name.pluralize.underscore}_count"
-    else
-      raise "The reflection #{reflection.active_record.name}##{reflection.name} hasn't got counter_cache set?" unless reflection.options[:counter_cache]
+    @column_name ||= begin
+      counter_cache = reflection.options[:counter_cache]
 
-      reflection.options[:counter_cache]
+      case counter_cache
+      when true
+        "#{reflection.active_record.name.pluralize.underscore}_count"
+      when Hash
+        counter_cache[:column].presence&.to_s || "#{reflection.active_record.name.pluralize.underscore}_count"
+      else
+        raise "The reflection #{reflection.active_record.name}##{reflection.name} hasn't got counter_cache set?" unless counter_cache
+
+        counter_cache
+      end
     end
   end
 

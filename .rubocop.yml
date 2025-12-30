@@ -6,12 +6,17 @@ AllCops:
     - db/schema.rb
     - spec/dummy/db/schema.rb
   NewCops: enable
-  TargetRubyVersion: 2.5
+  TargetRubyVersion: 3.3
 
-require:
+plugins:
   - rubocop-performance
   - rubocop-rails
+  - rubocop-factory_bot
+  - rubocop-capybara
+
+require:
   - rubocop-rspec
+  - rubocop-rspec_rails
 
 Layout/AccessModifierIndentation:
   EnforcedStyle: outdent
@@ -103,6 +108,7 @@ RSpec/NamedSubject:
 
 RSpec/NestedGroups:
   Enabled: false
+
 
 Style/ClassAndModuleChildren:
   EnforcedStyle: compact
