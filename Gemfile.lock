@@ -1,8 +1,8 @@
 PATH
   remote: .
   specs:
-    counter_cache_update (0.0.7)
-      rails (~> 7.1.0)
+    counter_cache_update (0.0.8)
+      rails (>= 6.1, < 8.0)
       service_pattern (>= 1.0.0)
 
 GEM

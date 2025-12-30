@@ -13,11 +13,11 @@ Gem::Specification.new do |s|
   s.summary = "Scans all your models and updates all counter caches with optimised SQL."
   s.description = "Scans all your models and updates all counter caches with optimised SQL."
   s.license = "MIT"
-  s.required_ruby_version = ">= 3.3"
+  s.required_ruby_version = ">= 3.0"
   s.metadata["rubygems_mfa_required"] = "true"
 
   s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
 
-  s.add_dependency "rails", "~> 7.1.0"
+  s.add_dependency "rails", ">= 6.1", "< 8.0"
   s.add_dependency "service_pattern", ">= 1.0.0"
 end
