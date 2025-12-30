@@ -25,7 +25,7 @@ private
       when true
         "#{reflection.active_record.name.pluralize.underscore}_count"
       when Hash
-        counter_cache[:column].presence || "#{reflection.active_record.name.pluralize.underscore}_count"
+        counter_cache[:column].presence&.to_s || "#{reflection.active_record.name.pluralize.underscore}_count"
       else
         raise "The reflection #{reflection.active_record.name}##{reflection.name} hasn't got counter_cache set?" unless counter_cache
 
